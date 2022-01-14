@@ -12,7 +12,7 @@ var users = require('./Routers/usersRoutes');
 var categories = require('./Routers/categoriesRoutes');
 
 // end
-mongoose.connect(process.env.DB_LOCAL, {
+mongoose.connect(process.env.DB_ALTS, {
     useUnifiedTopology: true,
     useNewUrlParser: true
 }, function (err, db) {
@@ -22,6 +22,7 @@ mongoose.connect(process.env.DB_LOCAL, {
         console.log('Connection established to');
     }
 });
+// end connect database
 
 app.use('/users/',users);
 app.use('/categories/', categories);
